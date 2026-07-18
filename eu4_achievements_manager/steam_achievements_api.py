@@ -2,6 +2,30 @@ import os
 import requests
 
 def get_steam_achievements() -> list[dict]:
+    """
+    Fetches the achievements for a given Steam user and game.
+
+    Returns:
+        A list of dictionaries, each representing an achievement with its details.
+
+        for example:
+        [
+            {
+                "apiname": "ACHIEVEMENT_1",
+                "achieved": 1,
+                "unlocktime": 1620000000
+            },
+            {
+                "apiname": "ACHIEVEMENT_2",
+                "achieved": 0,
+                "unlocktime": 0
+            },
+            ...
+        ]
+
+    Raises:
+        requests.exceptions.RequestException: If the HTTP request to the Steam API fails.
+    """
     API_KEY = os.getenv("STEAM_API_KEY")
     STEAM_ID = os.getenv("STEAM_ID")
     APP_ID = 236850  # Europa Universalis IV
@@ -25,5 +49,4 @@ def get_steam_achievements() -> list[dict]:
 
 if __name__ == "__main__":
     achievements = get_steam_achievements()
-    for achievement in achievements:
-        print(f"{achievement['apiname']}: {achievement['achieved']}")
+    print(achievements)
