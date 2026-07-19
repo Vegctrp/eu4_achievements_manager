@@ -22,7 +22,7 @@ def render_achievements_info(merged_achievements):
         achievements=merged_achievements,
     )
 
-    with open("data/output.html", "w", encoding="utf-8") as f:
+    with open("results/output.html", "w", encoding="utf-8") as f:
         f.write(html)
 
 
