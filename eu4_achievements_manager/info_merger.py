@@ -14,8 +14,6 @@ def merge_achievements_info(wiki_achievements_info, steam_achievements_info):
 
 
 if __name__ == "__main__":
-    from bs4 import BeautifulSoup
-
     from eu4_achievements_manager.get_achievements_info_from_steam import get_achievements_info_from_steam
     from eu4_achievements_manager.get_eu4_wiki import load_eu4_wiki_html
     from eu4_achievements_manager.eu4_wiki_parser import parse_wiki_achievement_table
